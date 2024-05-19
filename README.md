@@ -59,8 +59,8 @@ Un dossier pour les rapports des adresse IP et un autre dossier avec les rapport
 
 ## 🏗️ Construit avec
 
-Langages & Frameworks Python. [Voici la documentation officielle](https://www.python.org/doc/)
+Langages & Frameworks Python. [Cliquez ici pour consulter la documentation officielle](https://www.python.org/doc/)
 
 ## 📝 Licence
 
-Le fichier mentionnant la licence du dépôt est accessible ici.
+Le fichier mentionnant la licence du dépôt est accessible [ici.](https://github.com/samjaouh/Sup-de-Vinci-Toolbox-2024/blob/main/LICENSE)
