@@ -17,10 +17,7 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 
 ## Prérequis
 
-- **Systèmes d'exploitation supportés :**
-  - Linux (La distribution Kali est recommandée afin de pouvoir disposer d'outils préinstallés)
-  - Windows
-
+- **Linux 🐧 (La distribution Kali est recommandée afin de pouvoir disposer d'outils préinstallés)**
 - **Outils mentionnés dans le fichier de commandes.**
 - **Python 3.7+ 🐍 : Langage de programmation dans lequel le document a été programmé.**
 - **pip : Gestionnaire de paquets pour Python.**
@@ -30,8 +27,8 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 
 1. Clonez le dépôt :
     ```bash
-    git clone https://github.com/votreutilisateur/votredepot.git
-    cd votredepot
+    git clone https://github.com/samjaouh/Sup-de-Vinci-Toolbox-2024
+    cd Sup-de-Vinci-Toolbox-2024
     ```
 
 2. Installez les dépendances nécessaires :
@@ -43,13 +40,19 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 
 ## Utilisation
 
-### Phase de Reconnaissance
+Pour utiliser la toolbox, suivez ces étapes :
 
-#### Passive
+## Lancer l'outil
 
-- **nslookup**
-  ```bash
-  nslookup URL
-  nslookup -type=A URL
-  nslookup -type=MX URL
-  nslookup -type=TXT URL
+```bash
+python3 process.py
+```
+Une boite de dialogue apparaitra une fois la commande envoyée. Cette boite de dialogue contient :
+
+- Un champ permettant de mettre un document contenant des lignes de commandes (il est possible d'utiliser le fichier lignes de commande.txt disponible sur ce repo.)
+- l'adresse IP a entrer
+- L'URL a entrer
+
+Il est possible d'entrer soit une adresse IP, soit une URL, soit les deux.
+Les rapports générés seront stockés dans des dossiers crées à la racine d'ou le document process.py sera situé.
+Un dossier pour les rapports des adresse IP et un autre dossier avec les rapports de l'URL seront crées.
