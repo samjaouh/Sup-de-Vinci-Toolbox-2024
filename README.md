@@ -1,6 +1,6 @@
 # Toolbox de Commandes de Sécurité
 
-## À propos
+## 🔍 À propos
 
 Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, les tests de sécurité, et l'exploitation des vulnérabilités. Elle est conçue pour aider les professionnels de la sécurité informatique dans leurs évaluations de la sécurité des systèmes et des réseaux.
 
@@ -11,11 +11,9 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 - 🚀 [Installation](#installation)
 - 🛠️ [Utilisation](#utilisation)
 - 🏗️ [Construit avec](#construit-avec)
-- 📚 [Documentation](#documentation)
-- 🏷️ [Gestion des versions](#gestion-des-versions)
 - 📝 [Licence](#licence)
 
-## Prérequis
+## 📦 Prérequis
 
 - **Linux 🐧 (La distribution Kali est recommandée afin de pouvoir disposer d'outils préinstallés)**
 - **Outils mentionnés dans le fichier de commandes.**
@@ -23,7 +21,7 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 - **pip : Gestionnaire de paquets pour Python.**
 - **Git 🐙 : Logiciel de gestion de versions.**
 
-## Installation
+## 🚀 Installation
 
 1. Clonez le dépôt :
     ```bash
@@ -38,7 +36,7 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 
 3. Pour les outils spécifiques (PwnXSS, Beroot), suivez les instructions dans leur documentation respective.
 
-## Utilisation
+## 🛠️ Utilisation
 
 Pour utiliser la toolbox, suivez ces étapes :
 
@@ -49,10 +47,20 @@ python3 process.py
 ```
 Une boite de dialogue apparaitra une fois la commande envoyée. Cette boite de dialogue contient :
 
-- Un champ permettant de mettre un document contenant des lignes de commandes (il est possible d'utiliser le fichier lignes de commande.txt disponible sur ce repo.)
+- Un champ permettant de mettre un document contenant des lignes de commandes (il est possible d'utiliser le fichier [lignes de commande.txt](https://github.com/samjaouh/Sup-de-Vinci-Toolbox-2024/blob/main/ligne%20de%20commandes.txt) disponible sur ce repo.)
 - l'adresse IP a entrer
 - L'URL a entrer
 
 Il est possible d'entrer soit une adresse IP, soit une URL, soit les deux.
+
 Les rapports générés seront stockés dans des dossiers crées à la racine d'ou le document process.py sera situé.
+
 Un dossier pour les rapports des adresse IP et un autre dossier avec les rapports de l'URL seront crées.
+
+## 🏗️ Construit avec
+
+Langages & Frameworks Python. [Voici la documentation officielle](https://www.python.org/doc/)
+
+## 📝 Licence
+
+Le fichier mentionnant la licence du dépôt est accessible ici.
