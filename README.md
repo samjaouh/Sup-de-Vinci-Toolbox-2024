@@ -6,11 +6,10 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 
 ## Table des matières
 
-- 🪧 [À propos](#à-propos)
+- 🔍 [À propos](#à-propos)
 - 📦 [Prérequis](#prérequis)
 - 🚀 [Installation](#installation)
 - 🛠️ [Utilisation](#utilisation)
-- 🤝 [Contribution](#contribution)
 - 🏗️ [Construit avec](#construit-avec)
 - 📚 [Documentation](#documentation)
 - 🏷️ [Gestion des versions](#gestion-des-versions)
@@ -19,46 +18,13 @@ Cette toolbox regroupe une série de commandes utiles pour la reconnaissance, le
 ## Prérequis
 
 - **Systèmes d'exploitation supportés :**
-  - Linux
+  - Linux (La distribution Kali est recommandée afin de pouvoir disposer d'outils préinstallés)
   - Windows
-  - macOS
 
-- **Outils nécessaires :**
-  - `nslookup`
-  - `dig`
-  - `host`
-  - `whois`
-  - `wafw00f`
-  - `whatweb`
-  - `dnsrecon`
-  - `ping`
-  - `fping`
-  - `traceroute`
-  - `testssl`
-  - `sslscan`
-  - `sslyze`
-  - `nmap`
-  - `spiderfoot`
-  - `nikto`
-  - `httrack`
-  - `curl`
-  - `wapiti`
-  - `theHarvester`
-  - `gobuster`
-  - `sublist3r`
-  - `dirb`
-  - `wpscan`
-  - `snmp-check`
-  - `enum4linux`
-  - `nbtscan`
-  - `smbmap`
-  - `sqlmap`
-  - `hydra`
-  - `medusa`
-  - `ncrack`
-  - `PwnXSS`
-  - `crackmapexec`
-  - `Beroot`
+- **Outils mentionnés dans le fichier de commandes.**
+- **Python 3.7+ 🐍 : Langage de programmation dans lequel le document a été programmé.**
+- **pip : Gestionnaire de paquets pour Python.**
+- **Git 🐙 : Logiciel de gestion de versions.**
 
 ## Installation
 
