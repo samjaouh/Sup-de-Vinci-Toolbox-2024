@@ -1,0 +1,74 @@
+# Ping  1 echo request
+ping -c 1 10.0.15.2
+
+# Traceroute1
+traceroute google.com
+
+# Traceroute2
+traceroute 10.0.15.2
+
+# host
+host -a google.com
+
+# nslookup 
+nslookup google.com
+
+# Dig
+dig google.com
+
+# whois 
+whois 10.0.15.2 
+
+# testssl
+testssl google.com
+
+# sslscan
+sslscan google.com
+
+# sslyze
+sslyze google.com
+
+# Curl
+curl -i google.com
+
+# wafw00f 
+wafw00f google.com
+
+# whatweb1
+whatweb google.com 
+
+# whatweb2
+whatweb google.com
+
+# Nmap ports communs
+nmap -Pn -n --open -sCV --top-ports 2000 google.com
+
+# Nmap classique
+nmap google.com -p-
+
+# waybackurls 
+waybackurls https://google.com
+
+# ffuf1
+ffuf -u https://google.com/FUZZ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt 
+
+# ffuf2
+ffuf -u https://google.com/FUZZ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -c -s
+
+# gobuster 
+gobuster dir -u https://google.com -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt
+
+# sqlmap 
+sqlmap -a -u google.com   
+
+# nikto
+nikto -h 10.0.15.2
+
+#nmap range ip       
+nmap -PEPM -sP -n 10.0.15.2/24  
+
+#masscan to scan top20ports range 
+masscan -p20,21-23,25,53,80,110,111,135,139,143,443,445,993,995,1723,3306,3389,5900,8080 10.0.15.2/24
+
+# theHarvester
+theHarvester -d google.com -l 10 -b all
